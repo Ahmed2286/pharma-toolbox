@@ -1,4 +1,13 @@
-User-agent: *
+User-agent: bingbot
 Allow: /
+
+User-agent: msnbot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+User-agent: *
+Disallow: /
 
 Sitemap: https://ahmed2286.github.io/pharma-toolbox/sitemap.xml
