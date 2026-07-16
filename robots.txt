@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://GITHUB-USER.github.io/pharma-toolbox/sitemap.xml

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EN 2010 Logtag TRID30-7 - Specification — MSF OCP Pharmacy Knowledge Base</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header><a href="../../index.html">MSF OCP Pharmacy Knowledge Base</a><div class="crumb">5. Storage</div></header>
+<main>
+<h1>EN 2010 Logtag TRID30-7 - Specification</h1>
+<div class="source">Source document: EN 2010 Logtag TRID30-7 - Specification.pdf (toolbox, 5. Storage)</div>
+<p>TRID30-7 : Temperature Recorder with 30 day summary display  PRODUCT SPECIFICATION   Doc v 1.1  04/05/10                                       page 1/20</p>
+<p>Temperature Recorder / Data logger</p>
+<p>with 30 Day summary display</p>
+<p>TRID30-7</p>
+<p>PRODUCT SPECIFICATION</p>
+<p>Doc Ver 1.1 Released : 4th May 2010</p>
+<p>© Copyright 2010, LogTag Recorders Limited</p>
+<p>LogTag <br>
+TEMPERATURE RECORDER</p>
+<p>TRID30-7 : Temperature Recorder with 30 day summary display  PRODUCT SPECIFICATION   Doc v 1.1  04/05/10                                       page 2/20</p>
+<p>Contents</p>
+<p>Contents .................................................................................................................................................... 2 <br>
+Document Revision History ....................................................................................................................... 2 <br>
+Overview .................................................................................................................................................... 3 <br>
+Display Overview ....................................................................................................................................... 4 <br>
+Real time clock .......................................................................................................................................... 6 <br>
+Starting the recorder .................................................................................................................................. 7 <br>
+Clearing an alarm .................................................................................................................................... 10 <br>
+Stopping the recorder .............................................................................................................................. 13 <br>
+Resetting the recorder back to Ready state ............................................................................................ 14 <br>
+Paused function ....................................................................................................................................... 15 <br>
+Power save mode .................................................................................................................................... 16 <br>
+Hibernation .............................................................................................................................................. 18 <br>
+Total summary days collected ................................................................................................................. 19 <br>
+Specifications ........................................................................................................................................... 20</p>
+<p>Document Revision History</p>
+<p>Ver <br>
+Date <br>
+Author <br>
+Details <br>
+1.0 <br>
+9/12/09 <br>
+CW <br>
+Initial release. <br>
+1.1 <br>
+3/5/10 <br>
+MJ <br>
+Changed screen shots regarding the Day display while reviewing stats. <br>
+-Added new wake up feature to Hibernation mode. <br>
+-Update Time/date starting feature. <br>
+-Added optional display of days collected while recording.</p>
+<p>TRID30-7 : Temperature Recorder with 30 day summary display  PRODUCT SPECIFICATION   Doc v 1.1  04/05/10                                       page 3/20</p>
+<p>Overview <br>
+ <br>
+The LogTag TRID30-7 temperature recorder features a data logging memory storing up to 7770 <br>
+temperature readings and a separate rolling 30 day statistical max/min reading and duration memory. <br>
+ <br>
+During recording the display shows the current temperature (of the most recent reading), the status <br>
+(within or outside the acceptance range), an alarm trigger summary of up to the last 30 days (today and <br>
+29 days previous) of recording, the current time and battery status. <br>
+If a reading is outside the pre-set “Alarm” limits an alarm is generated and a “day alarm indicator” <br>
+appears on the display.  <br>
+ <br>
+This display arrangement is designed to show „at a glance‟ if temperature excursions have occurred for <br>
+both the current reading and up to 30 days in the past. Details of any excursions can be checked <br>
+directly by inspecting the statistics history on the recorder‟s display or in more detail by downloading the <br>
+logged data. <br>
+ <br>
+Logged temperature data can be downloaded via a standard LogTag Interface to the free companion <br>
+software LogTag Analyzer which provides facilities for displaying data in chart, table or statistical <br>
+formats and allows electronic archiving, export or transmission of the data in support of sophisticated <br>
+data management systems. <br>
+ <br>
+ <br>
+Button Actions Overview</p>
+<p>Start/Stop/Clear button functions require the button to be pressed continuously for 4 seconds and then <br>
+released when the related flashing indicator stops flashing. This reduces the possibility of vibration or a <br>
+load being placed on the recorder that causes permanent or intermittent button press to falsely trigger a <br>
+function. <br>
+Review mode is exited immediately by pressing the STOP button.</p>
+<p>Review/Mark button <br>
+Press to enter REVIEW mode and then press again to <br>
+advance through the day statistics. <br>
+This action also places an inspection mark in the log if <br>
+recording is active</p>
+<p>Start/Clear/Stop button <br>
+Press to start recording <br>
+Press to clear alarm (if function enabled) <br>
+Press to Stop recording (if function enabled) <br>
+Press to exit day summary review.</p>
+<p>TRID30-7 : Temperature Recorder with 30 day summary display  PRODUCT SPECIFICATION   Doc v 1.1  04/05/10                                       page 4/20</p>
+<p>Display Overview</p>
+<p>Display item <br>
+Description <br>
+ <br>
+Temperature value</p>
+<p>Temperature value (in °C or °F) <br>
+ <br>
+ <br>
+Reading type</p>
+<p>= the temperature of the last reading taken <br>
+ = The maximum reading in a given 24hour period</p>
+<p>= The minimum reading in a given 24hour period <br>
+ <br>
+ <br>
+Above/below limit <br>
+indicators</p>
+<p>Up arrow marker appears when the temperature displayed is above the specified upper <br>
+temperature limit <br>
+   <br>
+Down arrow marker appears when the temperature displayed is below the specified lower <br>
+temperature limit <br>
+ <br>
+ALARM indicator</p>
+<p>appears when an alarm is triggered.</p>
+<p>Time value</p>
+<p>The time (in HH:MM) can be current time, time remaining to start of a delayed start or duration of a <br>
+given max or min value above/below the specified limits. <br>
+ <br>
+The value displayed is indicated by the following :-</p>
+<p>= displaying Current Time (READY and RECORDING modes).</p>
+<p>= displaying remaining time to recording start when a DELAYED START time has <br>
+been configured (STARTING mode)</p>
+<p>= displaying duration of a given MAX or MIN statistic above/below the limits in a <br>
+given day. (REVIEW mode) <br>
+ <br>
+ <br>
+ <br>
+Battery status</p>
+<p>Performs battery test hourly.</p>
+<p>displayed when battery is tested OK.  <br>
+ <br>
+ <br>
+ <br>
+displayed when battery is tested LOW. <br>
+ <br>
+ <br>
+ <br>
+State indicators</p>
+<p>Ready to start recording</p>
+<p>Preparing to start recording. If a delayed start is configured then displays <br>
+time remaining to recording start.</p>
+<p>Recording</p>
+<p>Max/Min statistics collection paused due to button press activity</p>
+<p>Recording has stopped <br>
+ <br>
+Day alarm <br>
+indicators</p>
+<p>The display is organized with a table of „day alarm indicator‟ segments named “Today” to “-29d” <br>
+which are switched on when a given day has an alarm trigger present.</p>
+<p>Day number</p>
+<p>The day number of the currently selected day statistic is displayed when in Review mode. <br>
+TODAY is DAY 0, yesterday is day „-1‟. Can be configured to display the total number of days <br>
+collected while recording.</p>
+<p>Day alarm <br>
+indicators</p>
+<p>Reading type</p>
+<p>Above / below limit markers</p>
+<p>Battery status <br>
+Day number <br>
+Time value</p>
+<p>State indicators</p>
+<p>Temperature value</p>
+<p>ALARM indicator</p>
+<p>TRID30-7 : Temperature Recorder with 30 day summary display  PRODUCT SPECIFICATION   Doc v 1.1  04/05/10                                       page 5/20</p>
+<p>Alarm triggering and function. <br>
+ <br>
+A visual alarm trigger is displayed if one or more of the configured alarm trigger conditions <br>
+have been met. An alarm trigger condition can be a single violation reading (a reading above the upper <br>
+or below the lower threshold value), a set of consecutive violation readings or a total of violation <br>
+readings encountered (called „accumulative‟). <br>
+ <br>
+The alarm triggering structure within the recorder supports many different alarm trigger configurations.. <br>
+ <br>
+For example, a possible alarm trigger configuration could be :-</p>
+<p> <br>
+High Trigger when temperature is 10°C or greater for an accumulative time of 10 hours.</p>
+<p> <br>
+Low Trigger when temperature is -0.5°C or below for continuous 1 hour. <br>
+ <br>
+This is configured in using LogTag Analyzer as shown below :-</p>
+<p>Note: Accumulative or consecutive alarms automatically retrigger after the configured delay if the <br>
+temperature remains in violation.</p>
+<p>TRID30-7 : Temperature Recorder with 30 day summary display  PRODUCT SPECIFICATION   Doc v 1.1  04/05/10                                       page 6/20</p>
+<p>Real time clock</p>
+<p>The time shown on the recording display is linked to the recorder‟s internal real time clock. <br>
+A day change occurs when the display time rolls through midnight (i.e 00:00) and this is the main <br>
+function of the display clock. <br>
+ <br>
+The display clock value is set to the current time (or timezone) when the recorder is configured with <br>
+LogTag Analyzer and can be also directly adjusted using button actions. (see Adjusting the display <br>
+clock) <br>
+Note however that the recorder‟s internal real time clock value is only updated when the recorder is <br>
+configured with LogTag Analyzer. This prevents the data logging becoming discontinuous with changes <br>
+to the real time clock. <br>
+ <br>
+LogTag Analyzer can display the data logged readings with the following time stamp options:-</p>
+<p> <br>
+UTC (GMT) <br>
+ <br>
+UTC + configuration time zone <br>
+ <br>
+UTC + download timezone <br>
+ <br>
+UTC + display clock timezone (default)</p>
+<p>TRID30-7 : Temperature Recorder with 30 day summary display  PRODUCT SPECIFICATION   Doc v 1.1  04/05/10                                       page 7/20</p>
+<p>Starting the recorder</p>
+<p>Recorder in READY mode <br>
+ <br>
+The recorder must be in Ready mode for it to be <br>
+started. <br>
+In Ready mode the recorder displays the time, battery <br>
+status and the READY icon. <br>
+ <br>
+ <br>
+ <br>
+ <br>
+             Press and hold the Start button and observe <br>
+             that the STARTING icon starts flashing. <br>
+ <br>
+ <br>
+ <br>
+The button needs to be held down until the flashing <br>
+stops (normally 4-6 seconds however can be longer if <br>
+the button is not continuously depressed) <br>
+ <br>
+ <br>
+ <br>
+ <br>
+             Release the Start button when the STARTING   <br>
+             icon stops flashing  <br>
+ <br>
+ <br>
+ <br>
+The recorder enters STARTING mode.  <br>
+If a start delay has been configured then the TIME <br>
+DELAY to recording commencement is shown. <br>
+ <br>
+ <br>
+ <br>
+After the start delay has timed out (if configured) then <br>
+the recorder enters RECORDING mode.  <br>
+If no start delay is configured then immediately <br>
+proceeds to RECORDING. <br>
+ <br>
+ <br>
+ <br>
+The display shows the current temperature, current <br>
+time, battery status and any alarm triggers and is <br>
+updated each time a log is taken.</p>
+<p>TRID30-7 : Temperature Recorder with 30 day summary display  PRODUCT SPECIFICATION   Doc v 1.1  04/05/10                                       page 8/20</p>
+<p>Date and Time Starting</p>
+<p>The recorder can be set to start recording on a specific date and time from within LogTag Analyzer.  <br>
+ <br>
+Date/Time Starting mode is enabled or disabled via LogTag Analyzer software configuration function <br>
+Configure TRID -  dialogue. <br>
+ <br>
+Select „Date/Time start‟ from the drop down menu then select the Date and Time you wish the recorder <br>
+to start on.</p>
+<p>The recorder will display the following once „Date/Time Starting‟ has been enabled :-</p>
+<p>Note <br>
+ <br>
+Placing the recorder into Hibernate mode using LogTag Analyzer will disable the Date/Time start <br>
+function.</p>
+<p>TRID30-7 : Temperature Recorder with 30 day summary display  PRODUCT SPECIFICATION   Doc v 1.1  04/05/10                                       page 9/20</p>
+<p>Recording Display  <br>
+ <br>
+The normal recording mode display displays the current temperature of the last log taken so is updated <br>
+at the same rate as the logging interval. <br>
+The current time, battery status and alarm trigger day summary are displayed. <br>
+ <br>
+Some recording display examples are shown below :-</p>
+<p>The recorder shows alarm triggers 7, 19, 20 &amp; 25 <br>
+days ago.  <br>
+ <br>
+The current temperature is over the upper limit (as <br>
+indicated by the up arrow) but the duration of this <br>
+temperature excursion has not yet triggered an alarm. <br>
+ <br>
+ <br>
+ <br>
+ 20 Minutes later <br>
+ <br>
+ <br>
+The temperature excursion has triggered an alarm. <br>
+ <br>
+The <br>
+ symbol is shown and the <br>
+ marker <br>
+day alarm indicator is shown. <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ 12 hours later <br>
+ <br>
+The temperature has returned to the acceptable range <br>
+but the alarm remains present. <br>
+(i.e has not been inspected and cleared) <br>
+ <br>
+The day summary has shifted by 1 day as the display <br>
+time has gone through midnight (00:00).</p>
+<p>TRID30-7 : Temperature Recorder with 30 day summary display  PRODUCT SPECIFICATION   Doc v 1.1  04/05/10                                       page 10/20</p>
+<p>Clearing an alarm</p>
+<p>Press and hold the START/CLEAR/STOP button. <br>
+ <br>
+The ALARM icon will flash.  <br>
+ <br>
+ <br>
+ <br>
+ <br>
+Wait until the flashing to stop then release the button <br>
+within 2 seconds to clear the flagged alarm. <br>
+ <br>
+Note that for this function to operate it needs to be <br>
+enabled in the Configure TRID - Advanced Options <br>
+configure dialogue.</p>
+<p>Note <br>
+ <br>
+Only the <br>
+ icon can be cleared, the day alarm icons remain as they are part of the statistic <br>
+summary.</p>
+<p>Clear and reset alarm when STOP/Clear button pressed</p>
+<p>TRID30-7 : Temperature Recorder with 30 day summary display  PRODUCT SPECIFICATION   Doc v 1.1  04/05/10                                       page 11/20</p>
+<p>Reviewing day statistics  <br>
+ <br>
+ <br>
+The Review of day statistics history is accessed by pressing the REVIEW button           and is <br>
+accessible in RECORDING and STOPPED modes. <br>
+ <br>
+An example of a reviewing days statistics is shown below :-</p>
+<p>Pressing Review button displays current day‟s    <br>
+             max statistic. <br>
+ <br>
+The “Today” segment flashes and „Day 00‟ is shown to <br>
+indicate the „Today‟ selection. <br>
+In this screen example the selected day (Today) does <br>
+not have any recordings that are outside the <br>
+acceptance range. <br>
+ <br>
+ <br>
+ <br>
+Pressing Review  button again displays the  <br>
+             day‟s minimum statistic.</p>
+<p>Pressing the Review button again <br>
+ <br>
+displays the next previous day‟s max statistic. <br>
+ <br>
+In this screen example the selected day has recordings <br>
+that are above the upper limit and the duration value <br>
+shows the amount of time recorded above the limit. <br>
+The max statistic is above the upper limit so the up <br>
+arrow is shown and an alarm was triggered by this <br>
+statistic as indicated by the ALARM text shown. <br>
+ <br>
+ <br>
+ <br>
+ <br>
+Pressing the Review button again <br>
+ <br>
+displays the day‟s minimum statistic. <br>
+ <br>
+The min statistic is not below the lower limit and did not <br>
+trigger an alarm.</p>
+<p>TRID30-7 : Temperature Recorder with 30 day summary display  PRODUCT SPECIFICATION   Doc v 1.1  04/05/10                                       page 12/20</p>
+<p>Pressing the Review button again <br>
+ <br>
+displays the next previous day‟s max statistics. <br>
+ <br>
+The “-2day” day marker flashes and DAY  „-02‟ is <br>
+displayed. <br>
+ <br>
+In this screen example the selected day does have <br>
+recordings that are above the upper limit however did <br>
+not exceed the alarm trigger durations so only the up <br>
+arrow is shown and no ALARM trigger has occurred <br>
+ <br>
+ <br>
+ <br>
+Pressing the Review button again <br>
+ <br>
+displays the day‟s minimum statistic. <br>
+ <br>
+Each time the Review button is pressed the cursor <br>
+advances to the next previous day. <br>
+ <br>
+If less that 30 days of recordings have been collected <br>
+so far then the day marker only advances as far as <br>
+there is data available after which the next press rolls <br>
+the summary back to the statistic for Today</p>
+<p>Pressing the            button at any time reverts the display back to the normal mode.  <br>
+ <br>
+The display will revert back to normal mode after 30 seconds of no button activity. <br>
+  <br>
+ <br>
+ <br>
+Note <br>
+ <br>
+1. If exposure to alarm temperatures occurs in a continuous period of time that is cut with the day shift <br>
+(midnight) then the time count continues and if the alarm period is finally exceeded then the day in <br>
+which the time count was completed is displayed with day alarm indicator and the time exposure split <br>
+appropriately over the two days. <br>
+ <br>
+2. The duration values above or below the specified High/Low temperature are always displayed. <br>
+Presence of a day alarm trigger marker means that exposure to an alarm temperature for a continuous <br>
+period greater than the configured trigger duration has occurred on that day.</p>
+<p>TRID30-7 : Temperature Recorder with 30 day summary display  PRODUCT SPECIFICATION   Doc v 1.1  04/05/10                                       page 13/20</p>
+<p>Stopping the recorder</p>
+<p>Press and hold the STOP button. <br>
+ <br>
+The STOPPED icon will flash.  <br>
+ <br>
+ <br>
+ <br>
+ <br>
+Wait for the flashing to stop then release the STOP <br>
+button within 2 seconds to stop recording. <br>
+ <br>
+ <br>
+ <br>
+Note that for this function to operate it needs to be <br>
+enabled in the Configure TRID - Advanced Options <br>
+configure dialogue.</p>
+<p>Note <br>
+ <br>
+If an ALARM is present (and the clear alarm by pressing STOP button function is enabled) then it will <br>
+need to be cleared first before being able to stop the recorder.</p>
+<p>TRID30-7 : Temperature Recorder with 30 day summary display  PRODUCT SPECIFICATION   Doc v 1.1  04/05/10                                       page 14/20</p>
+<p>Resetting the recorder back to Ready state</p>
+<p>Once the recorder is back in READY state, recording can be restarted.</p>
+<p>Press and hold the START button. <br>
+ <br>
+The READY icon will flash.  <br>
+ <br>
+Wait until for the flashing to stop then release the <br>
+START button within 2 seconds to revert the recorder <br>
+to READY state. <br>
+ <br>
+ <br>
+        Note that all recordings and statistics are lost  <br>
+ <br>
+ <br>
+Note that for this function to operate it needs to be <br>
+enabled in the Configure TRID - Advanced Options <br>
+configure dialogue.</p>
+<p>!</p>
+<p>TRID30-7 : Temperature Recorder with 30 day summary display  PRODUCT SPECIFICATION   Doc v 1.1  04/05/10                                       page 15/20</p>
+<p>Paused function</p>
+<p>The recorder can be configured to suspend processing of readings for alarms and max/min statistics for <br>
+a period of time after button press activity. <br>
+This allows the user to review the current statistics or clear an alarm without causing a false alarm or <br>
+statistic while handling the recorder.  <br>
+ <br>
+The delay is expressed in multiples of logging interval and is set in the LogTag Analyzer Configure <br>
+TRID - Advanced Options configure dialogue.</p>
+<p>Paused processing is indicated on the display by the PAUSED icon being present as shown in the <br>
+display example below :-</p>
+<p>Note <br>
+ <br>
+Data logging continues but each log that is taken during the paused period is flagged and labelled as <br>
+paused. Logs that are flagged as „paused‟ are not used in the summary statistics.</p>
+<p>TRID30-7 : Temperature Recorder with 30 day summary display  PRODUCT SPECIFICATION   Doc v 1.1  04/05/10                                       page 16/20</p>
+<p>Power save mode <br>
+ <br>
+When Power save mode is enabled the display will automatically switch off after 30 seconds of no <br>
+button activity.  <br>
+The recorder uses significantly less battery power with the display off (typically to around 1/3 of the <br>
+average power with the display on). <br>
+This function is appropriate in applications where the current temperature display is not required to be <br>
+often seen such as a transit monitoring application. <br>
+ <br>
+Press any button to cause the display to re-activate. <br>
+ <br>
+The power save mode is enabled or disabled via LogTag Analyzer software configuration function <br>
+Configure TRID - Advanced Options dialogue.</p>
+<p>TRID30-7 : Temperature Recorder with 30 day summary display  PRODUCT SPECIFICATION   Doc v 1.1  04/05/10                                       page 17/20</p>
+<p>Adjusting the display clock <br>
+ <br>
+The display clock of the recorder can be set to the correct time zone either by using LogTag Analyzer <br>
+software or directly using key actions on the recorder itself. <br>
+ <br>
+ <br>
+The clock can be adjusted to local time by pressing the           and            buttons together continuously <br>
+for a period of 8 seconds. <br>
+ <br>
+During this button press period                     icon flashes. Release the buttons when the flashing stops <br>
+to enter clock adjustment mode. <br>
+ <br>
+The display then changes as shown in the example below with the minutes digits flashing. <br>
+ <br>
+In the example below the hours is 18 and the minutes is 38:-</p>
+<p>Press the            button to increment the minutes digit (rolls <br>
+back to „00‟ after „59‟ with multiple presses). <br>
+ <br>
+ <br>
+Press the           button to accept the minutes value and the <br>
+display then flashes the hours value. <br>
+ <br>
+ <br>
+Press the            button to increment the hours value digits <br>
+(rolls back to „00‟ after „23‟). <br>
+ <br>
+ <br>
+Press the           button to accept the hours value and the <br>
+display then reverts to the normal display. <br>
+ <br>
+ <br>
+ <br>
+NOTE: It is advised that the real time clock Hours is only adjusted when in STOPPED or READY <br>
+modes (i.e not recording) to avoid large shifts in day boundary data. <br>
+ <br>
+If a display clock adjustment is made while in RECORDING mode then the next log taken records a flag <br>
+indicating a time change took place. <br>
+ <br>
+Changes to the display clock do not affect the internal real time UTC+timezone offset value so the <br>
+logged data does not experience time gaps.</p>
+<p>TRID30-7 : Temperature Recorder with 30 day summary display  PRODUCT SPECIFICATION   Doc v 1.1  04/05/10                                       page 18/20</p>
+<p>Hibernation</p>
+<p>When hibernated, the recorder‟s power consumption falls nearly to zero and the battery life approaches <br>
+the shelf life of the battery (typically 5+ years). <br>
+This state is useful for conserving battery life during periods of non use. <br>
+ <br>
+A hibernated recorder has no active display however a button press will wake the recorder up and it will <br>
+display just the battery status for a few seconds then revert back to display off.</p>
+<p>A hibernated recorder can be placed into the Ready state by pressing the            and            buttons <br>
+together continuously for a period of 6 seconds. <br>
+During this button press period the READY icon flashes. Release the buttons when the flashing stops to <br>
+enter READY state.</p>
+<p>Recorders can only be placed into Hibernation with LogTag Analyzer. <br>
+ <br>
+ <br>
+ <br>
+Note <br>
+ <br>
+The real time clock is not running in a hibernated recorder and must be setup once hibernation is <br>
+manually exited to the READY state (see „Adjusting the display clock‟).</p>
+<p>TRID30-7 : Temperature Recorder with 30 day summary display  PRODUCT SPECIFICATION   Doc v 1.1  04/05/10                                       page 19/20</p>
+<p>Total summary days collected</p>
+<p>The recorder can be setup to show the Total number of days collected. This is shown on both the <br>
+Recording and Stopped status screens. <br>
+ <br>
+The total number of days collected can be enabled in LogTag Analyzer Configure TRID - Advanced <br>
+Options configure dialogue.</p>
+<p>RECORDING status showing „13‟ days of data has been <br>
+collected. <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+STOPPED status showing „27‟ days of data has been <br>
+collected.</p>
+<p>TRID30-7 : Temperature Recorder with 30 day summary display  PRODUCT SPECIFICATION   Doc v 1.1  04/05/10                                       page 20/20</p>
+<p>Specifications</p>
+<p>LogTag Part codes <br>
+TRID30-7R : (replaceable battery) <br>
+TRID30-7F : (fixed battery)</p>
+<p>Rated Operating Temperature Range <br>
+-30°C ~ +60°C (-22°F ~ +140°F)</p>
+<p>Rated accuracy</p>
+<p>Better than ±0.5°C (±0.9°F) for better for measurements from -20°C ~ +40°C (-22°F <br>
+~ +104°F)  - typically ±0.3°C (0.6°F) <br>
+Better than ±0.8°C (±1.5°F) for other measurements - typically ±0.5°C (0.9°F).</p>
+<p>Rated temperature resolution on LCD <br>
+0.1°C(0.2°F) for measurements -30°C ~ +40°C (-22°F ~ +104°F) <br>
+0.2°C(0.4°F) for measurements above +40°C (+104°F)</p>
+<p>Recording Capacity</p>
+<p>Data logging memory : 7770 logs (eg 53.9 days @ 10min logging, 80.9 days @ <br>
+15min logging) <br>
+Day summary statistics memory (for display on LCD): up for 30 days of Max/Min and <br>
+duration values</p>
+<p>Sampling Interval <br>
+configurable from 30 seconds to hourly</p>
+<p>Logging modes <br>
+Supports „continuous‟ wrap around or specific recording period</p>
+<p>Read time clock accuracy</p>
+<p>Quartz crystal locked real time clock. <br>
+Rated accuracy ±25ppm @ 25°C (equiv to ±2.5 seconds/day) <br>
+Rated temperature coefficient is -0.034±0.006ppm/°C  <br>
+(i.e typically +/- 0.00294seconds/day/°C)</p>
+<p>Download Time <br>
+Typically with full memory in less than 5 secondss depending on computer or <br>
+readout device used.</p>
+<p>Environmental <br>
+IP65 (when vertically mounted or hung)</p>
+<p>Power source <br>
+3V Lithium-Manganese Dioxide extended temperature chemistry</p>
+<p>Battery life <br>
+TRID30-7R : typically 1 year of operation <br>
+TRID30-7F : typically 2 years of operation</p>
+<p>Size <br>
+93mm(H)  x54.5mm(W)x8.6mm(T)</p>
+<p>Weight <br>
+TRID30-7R : 39grams, TRID30-7F : 43grams</p>
+<p>Case Material <br>
+Polycarbonate</p>
+<p>EMC Compliance</p>
+<p>Complies with EC EMC directives (EN50081-1:1992 &amp; EN 61000-6-1:2001) <br>
+Complies with FCC Part 15 Subparts A and B.</p>
+<p>FDA 21CFR Part 11 Compliance <br>
+Designed to comply with FDA 21CFR Part 11 (Digital signatures)</p>
+<p>Manufactured to meet the European RoHS Directive</p>
+<p>Reader Interface <br>
+Standard LogTag Interface cradle</p>
+</main>
+<footer>Published by the MSF OCP (Médecins Sans Frontières, Operational Centre Paris) Pharmacy department as a public reference and as a knowledge source for the Paris Pharma AI assistant. Content © MSF. For questions contact Paris Pharma. Last generated: 2026-07-16.</footer>
+</body>
+</html>

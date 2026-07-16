@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pharmalink-AI-Knowledge — MSF OCP Pharmacy Knowledge Base</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header><a href="../index.html">MSF OCP Pharmacy Knowledge Base</a><div class="crumb">PharmaLink app</div></header>
+<main>
+<h1>Pharmalink-AI-Knowledge</h1>
+<div class="source">Source document: Pharmalink-AI-Knowledge.docx (pharmalink, PharmaLink app)</div>
+<p><img src="user-guide_media/media/image1.png" style="width:1.9685in;height:0.408in" /></p>
+<p><strong>PharmaLink — Assistant knowledge base</strong></p>
+<p><em>How to use the PharmaLink app — for the Paris Pharma AI assistant</em></p>
+<p><em>Content current as of: app v39 + flows requester v2.7 / actor v2.15 / reminders v2.6 — July 2026</em></p>
+<h1 id="keeping-this-document-up-to-date-read-first">0. Keeping this document up to date (READ FIRST)</h1>
+<p><strong>This document is the knowledge source for the PharmaLink AI assistant. It describes how the app works. It MUST be refreshed every time a new version of the app or its flows is released, otherwise the assistant will give users outdated instructions.</strong></p>
+<p>Update rule:</p>
+<ul>
+<li><p>Whenever a new app version (.msapp) or flow version ships, update the affected task steps below and the version history table at the end.</p></li>
+<li><p>Update the 'Content current as of' line at the top with the new version numbers and date.</p></li>
+<li><p>Re-upload this file to the assistant's Knowledge in Copilot Studio (remove the old file first), then re-publish the agent.</p></li>
+<li><p>The source of truth for what changed each version is CHANGELOG.md in the PharmaLink project folder — reconcile this document against it on every release.</p></li>
+</ul>
+<p>Assistant scope (what it should and should not do):</p>
+<ul>
+<li><p>DO: explain how to use PharmaLink, what each role can do, what a status means, and how notifications work.</p></li>
+<li><p>DO NOT: give clinical, medical, dosing, or regulatory advice, or make validation decisions on the user's behalf.</p></li>
+<li><p>If a user reports a bug or something not working: point them to the '🐞 Report a bug / suggest an improvement' link on the Home screen.</p></li>
+<li><p>If unsure, tell the user to ask their HQ pharmacy (Paris Pharma) contact.</p></li>
+</ul>
+<h1 id="what-pharmalink-is">1. What PharmaLink is</h1>
+<p>PharmaLink is a bilingual (English/French) Microsoft Power Apps application used by MSF OCP pharmacy to manage two processes:</p>
+<ul>
+<li><p>New Article Request (NAR / Nouvelle demande d'article): request a new medical article or device to be added/sourced, with a staged validation workflow.</p></li>
+<li><p>Cold Chain Break report (CCB / Rupture de la chaine du froid): report a temperature excursion affecting cold-chain products, with per-product HQ decisions.</p></li>
+</ul>
+<p>It replaces the old email-and-spreadsheet process. Every case has a discussion thread and sends automatic e-mail notifications. The language is switched any time with the EN / FR toggle at the top-right of the Home screen.</p>
+<h1 id="roles-who-can-do-what">2. Roles — who can do what</h1>
+<p>A user's role is detected automatically from their e-mail when they open the app. The roles line is shown under the greeting on Home.</p>
+<ul>
+<li><p>Requester (default): anyone. Can submit NARs and CCBs and follow their own cases.</p></li>
+<li><p>Pharma coordinator (Coordo): validates requests coming from their mission's field (first step for field requests).</p></li>
+<li><p>Medical referent (Referent): validates requests for their medical specialty. Any referent of that specialty can act.</p></li>
+<li><p>Medical Director (DirMed): validates non-MML requests after the referent.</p></li>
+<li><p>HQ Pharmacy (Paris Pharma / PP): instructs requests, chooses the procurement route, records CCB product decisions, closes cases.</p></li>
+<li><p>MSF Log: creates the new article code during international sourcing, and answers information requests.</p></li>
+<li><p>Administrator: manages roles and missions; can act on any case.</p></li>
+<li><p>Viewer: read-only access to their mission's cases.</p></li>
+</ul>
+<p>You only see cases you are entitled to see: your own submissions, plus (for validators) the cases waiting for your role, plus (for coordinators/viewers) the cases of your mission.</p>
+<h1 id="how-e-mail-notifications-work">3. How e-mail notifications work</h1>
+<ul>
+<li><p>E-mails are sent automatically at each step, from the Paris Pharma shared mailbox.</p></li>
+<li><p>The subject is tagged by role, e.g. [Pharmalink][DirMed] Validation needed, and the body opens with the action needed and a line 'You receive this email as: &lt;your role&gt;'.</p></li>
+<li><p>Each e-mail has a direct link that opens the exact case in PharmaLink.</p></li>
+<li><p>You are NEVER e-mailed about an action you did yourself (author self-exclusion). This is why, if you hold several roles and you perform the action, you do not receive the notification — someone else performing it would trigger your e-mail.</p></li>
+<li><p>Comments notify the person whose turn it is on the case, plus the requester. Using @name in a comment also e-mails that person directly.</p></li>
+<li><p>A daily reminder e-mail lists cases that have been waiting too long.</p></li>
+</ul>
+<p><strong>Q: Why didn't I get an e-mail even though I hold that role?</strong></p>
+<p>A: Most likely because you are the person who performed the action — the app never notifies you about your own actions. Have a different user perform the action, or check that your account is actually listed for that role/specialty/mission.</p>
+<h1 id="task-guides">4. Task guides</h1>
+<h2 id="submit-a-new-article-request-nar">4.1 Submit a New Article Request (NAR)</h2>
+<ol type="1">
+<li><p>Home → New Article Request.</p></li>
+<li><p>Step 1 (Item): choose item type (Drug / Medical device / Food), product name, form/dosage. Optionally search the catalogue to pre-fill the code and price. Answer the MML questions. Press Next.</p></li>
+<li><p>Step 2 (Clinical justification): indication/intended use, added value, protocol, indicative price. Press Next.</p></li>
+<li><p>Step 3 (Logistics &amp; submit): cold-chain and shelf-life flags, medical specialty (this auto-fills the referent), mission and project code. Optionally toggle 'Submit as a field request'. Press Next.</p></li>
+<li><p>The request is created and opens on its detail page. Attach any datasheets, photos or quotes there (up to 10 files, 30 MB each).</p></li>
+</ol>
+<p>Note: if you are yourself a referent of the chosen specialty, the referent step is skipped automatically.</p>
+<h2 id="validate-or-act-on-a-request-validators">4.2 Validate or act on a request (validators)</h2>
+<p>Open the request (from your e-mail link, or Home → View requests &amp; reports → My actions). Depending on your role and the stage, buttons appear on the right:</p>
+<ul>
+<li><p>Accept: moves the request to the next stage.</p></li>
+<li><p>Reject: closes the request with a mandatory reason.</p></li>
+<li><p>Request info from the field / from MSF Log: pauses the request until they reply in the discussion.</p></li>
+<li><p>Reassign referent (PP/Admin): assigns a different referent.</p></li>
+<li><p>Undo validation / rejection: moves the case back one step (or reopens a closed one).</p></li>
+<li><p>You can always add a comment; use @ to notify a specific colleague.</p></li>
+</ul>
+<h2 id="hq-pharmacy-procurement-route-and-sourcing">4.3 HQ Pharmacy: procurement route and sourcing</h2>
+<ol start="6" type="1">
+<li><p>When a validated request reaches HQ Pharmacy, PP chooses: International procurement (IP), Local purchase (LP), or MML handled.</p></li>
+<li><p>If routed to IP, MSF Log is notified (with a Word extract of the request attached) to create the article code.</p></li>
+<li><p>During sourcing, MSF Log or PP types the new code into the 'New article code' box on the request and presses Save code.</p></li>
+<li><p>'Sourced – code created' stays disabled until a code has been saved; then pressing it closes the request as sourced.</p></li>
+<li><p>If no source is found, press 'No source' to close the request.</p></li>
+</ol>
+<h2 id="report-a-cold-chain-break-ccb">4.4 Report a Cold Chain Break (CCB)</h2>
+<ol start="11" type="1">
+<li><p>Home → Report a Cold Chain Break. Fill one report per affected piece of equipment.</p></li>
+<li><p>Step 1 (Incident): mission, location, exposure start/end (date + time), temperatures, equipment/config, Freezetag / 3M card / LogTag. Press Next. (Exposure times are recorded as you enter them, in the field's local time.)</p></li>
+<li><p>Step 2 (Details &amp; actions): cause of the problem, what happened, corrective actions, proposed actions. Press Next.</p></li>
+<li><p>Step 3 (Products &amp; attachments): add each affected product (search the cold-chain catalogue or type it in), and attach the LogTag report and any evidence. Press Submit.</p></li>
+</ol>
+<h2 id="hq-pharmacy-decide-on-ccb-products-and-give-final-feedback">4.5 HQ Pharmacy: decide on CCB products and give final feedback</h2>
+<ul>
+<li><p>On the CCB, open the Products tab. For each product press Decide and choose: No restriction, With restriction, or Cannot use (with a comment). Each decision notifies the requester and the mission cells.</p></li>
+<li><p>The 'Final feedback' button that closes the report is disabled until at least one product exists AND every product has a decision (none left on Waiting).</p></li>
+<li><p>'Request info from the field / MSF Log' pauses the CCB for more information. 'Cancel this report' cancels it.</p></li>
+</ul>
+<h2 id="comment-and-mention">4.6 Comment and @mention</h2>
+<ul>
+<li><p>Every case has a discussion thread. Type a comment and press Send.</p></li>
+<li><p>Type @ then a name to notify a specific person by e-mail, even if it is not their turn.</p></li>
+<li><p>A plain comment (no @) notifies whoever the case is currently waiting on, plus the requester.</p></li>
+</ul>
+<h2 id="dashboard-and-annual-report">4.7 Dashboard and annual report</h2>
+<ul>
+<li><p>Home → Dashboard (HQ roles): live tiles per stage, the oldest open requests, and CCBs awaiting a decision.</p></li>
+<li><p>'Export a report' generates the annual Excel files (one row per request/CCB plus statistics); they arrive by e-mail and are stored in the NARExtracts library.</p></li>
+</ul>
+<h2 id="report-a-bug-or-suggest-an-improvement">4.8 Report a bug or suggest an improvement</h2>
+<p>Home → '🐞 Report a bug / suggest an improvement' opens a short form (type, area, severity, description). Every submission is recorded in the feedback tracker and e-mailed to the pharmacy team. Use this for anything not working or any idea.</p>
+<h1 id="request-statuses-nar">5. Request statuses (NAR)</h1>
+<ul>
+<li><p>Coordinator: waiting for the mission's pharma coordinator (field requests only).</p></li>
+<li><p>Referent: waiting for a medical referent of the specialty.</p></li>
+<li><p>Medical Director: waiting for DirMed (non-MML requests).</p></li>
+<li><p>HQ Pharmacy: with Paris Pharma to choose the procurement route.</p></li>
+<li><p>Sourcing: routed to international procurement; MSF Log is creating the code.</p></li>
+<li><p>Closed: finished — sourced (code created), local purchase, MML handled, no source, or rejected.</p></li>
+</ul>
+<p>CCB statuses: PP analysis (with HQ Pharmacy) → Closed (final feedback delivered), or Cancelled.</p>
+<h1 id="common-questions">6. Common questions</h1>
+<p><strong>Q: The e-mail link says 'app not found' or asks for access.</strong></p>
+<p>A: Old test e-mails from before the app was shared/updated can carry a dead link. Open the app from your normal PharmaLink link and find the case under View requests &amp; reports. If it asks for access, the app has not been shared with you yet — contact HQ pharmacy.</p>
+<p><strong>Q: I can't see a case a colleague mentioned.</strong></p>
+<p>A: Visibility is by role and mission. If it is not your case, not your mission, and not waiting for your role, it will not appear in your list — but a direct e-mail/@mention link still opens it.</p>
+<p><strong>Q: The app is in the wrong language.</strong></p>
+<p>A: Use the EN / FR toggle at the top-right of the Home screen; it switches the whole app instantly.</p>
+<p><strong>Q: A required date or time looks wrong.</strong></p>
+<p>A: Report it via the bug link. Cold-chain exposure times are recorded in the field's local time; expiry dates are calendar dates (no time zone).</p>
+<h1 id="glossary">7. Glossary</h1>
+<ul>
+<li><p>NAR – New Article Request.</p></li>
+<li><p>CCB – Cold Chain Break report.</p></li>
+<li><p>PP / Paris Pharma – HQ Pharmacy (the shared mailbox and role).</p></li>
+<li><p>DirMed – Medical Director.</p></li>
+<li><p>MML – the reference medical/material list; on-MML requests skip the DirMed step.</p></li>
+<li><p>IP / LP – International Procurement / Local Purchase.</p></li>
+<li><p>MSF Log – MSF Logistique, which creates article codes during sourcing.</p></li>
+<li><p>LogTag / Freezetag / 3M card – cold-chain temperature monitoring devices.</p></li>
+</ul>
+<h1 id="version-history-update-on-every-release">8. Version history (update on every release)</h1>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>Version</strong></th>
+<th><strong>Date</strong></th>
+<th><strong>What changed (summary)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>app v35 / flows v2.12</td>
+<td>Jul 2026</td>
+<td>Cold-chain times recorded in field local time; wizard middle buttons say 'Next'; attachment limits 10 files/30 MB; empty CCB cannot be closed; Word extract now lists referent + DirMed validations.</td>
+</tr>
+<tr>
+<td>app v33</td>
+<td>Jul 2026</td>
+<td>Plain comments notify the current actor and requester; 'New article code' box added for sourcing.</td>
+</tr>
+<tr>
+<td>app v31</td>
+<td>Jul 2026</td>
+<td>Official PharmaLink branding and app name.</td>
+</tr>
+<tr>
+<td>app v35–v37 + flows v2.7/v2.14/v2.6/report v2/feedback v2</td>
+<td>Jul 2026</td>
+<td>Two audit fix-packs (35 + 9 findings): local break times captured on CCB reports; attachments never lost on wizard exits; decimal numbers work in every language; attachments and comments locked for read-only viewers and closed cases; special characters (&lt;, &gt;, &amp;) safe in every mail, Word extract and report; all dates shown in Paris time; higher-contrast status pills; screen-reader improvements; feedback tracker '=' guard.</td>
+</tr>
+<tr>
+<td>app v38 + actor flow v2.15</td>
+<td>Jul 2026</td>
+<td>Real-user test round fixes: email deep links now open the case fully loaded on first view; NAR notification mails restored (flow crash fixed); the NAR wizard's catalog picker pre-fills the indicative price.</td>
+</tr>
+<tr>
+<td>app v39</td>
+<td>Jul 2026</td>
+<td>Performance hardening for large volumes (new IsOpen tracking column; faster, complete case lists at any size). No change to how users work.</td>
+</tr>
+</tbody>
+</table>
+
+</main>
+<footer>Published by the MSF OCP (Médecins Sans Frontières, Operational Centre Paris) Pharmacy department as a public reference and as a knowledge source for the Paris Pharma AI assistant. Content © MSF. For questions contact Paris Pharma. Last generated: 2026-07-16.</footer>
+</body>
+</html>
